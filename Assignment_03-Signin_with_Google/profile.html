@@ -12,6 +12,7 @@
         <img class="m-3 rounded-circle" id="image"/>
         <h3 id="fname">First Name : </h3>
         <h3 id="lname">Last Name : </h3>
+        <h3 id="email">Email Id : </h3>
         
         <button class="btn btn-danger d-block m-3" onclick="logout()">Logout</button>
     </div>
@@ -43,6 +44,7 @@
                 console.log(info)
                 document.getElementById('fname').innerHTML += info.given_name
                 document.getElementById('lname').innerHTML += info.family_name
+                document.getElementById('email').innerHTML += info.email
                 document.getElementById('image').setAttribute('src',info.picture)
         })
 

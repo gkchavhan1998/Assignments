@@ -8,7 +8,8 @@ function signIn() {
       "367057881503-om4j85llqmqf4utv6uos4ru088kbj8cp.apps.googleusercontent.com",
     redirect_uri: "http://127.0.0.1:5500/profile.html",
     response_type: "token",
-    scope: "https://www.googleapis.com/auth/userinfo.profile",
+    scope:
+      "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email",
     include_granted_scopes: "true",
     state: "pass-through value",
   };
