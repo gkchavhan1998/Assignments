@@ -48,7 +48,11 @@ function AreaChrt(props) {
 
   return (
     <>
-      <ResponsiveContainer width="100%" height="100%" aspect={3}>
+      <ResponsiveContainer
+        width={props.details.rc_width}
+        height={props.details.rc_height}
+        aspect={props.details.rc_aspect}
+      >
         <AreaChart
           width={props.details.rc_width}
           height={props.details.rc_aspect}

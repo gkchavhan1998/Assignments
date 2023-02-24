@@ -30,7 +30,7 @@ function App() {
             <Route path="lineC" element={<LineChrt details={chartProps} />} />
             <Route path="areaC" element={<AreaChrt details={chartProps} />} />
             <Route path="barC" element={<BarChrt details={chartProps} />} />
-            <Route path="pieC" element={<PieChrt />} />
+            <Route path="pieC" element={<PieChrt details={pieProps} />} />
             <Route path="radarC" element={<RadarChrt details={radarProps} />} />
             <Route
               path="composedC"
@@ -50,6 +50,7 @@ function App() {
 
 const chartProps = {
   rc_width: "100%",
+  rc_height: "100%",
   rc_aspect: 3,
   chart_width: 500,
   chart_height: 300,
@@ -68,6 +69,9 @@ const chartProps = {
 };
 
 const radarProps = {
+  rc_width: "100%",
+  rc_height: "100%",
+  rc_aspect: 3,
   cx: "50%",
   cy: "50%",
   outer_Radius: "80%",
@@ -79,6 +83,9 @@ const radarProps = {
 };
 
 const rbchartProps = {
+  rc_width: "100%",
+  rc_height: "100%",
+  rc_aspect: 3,
   cx: "50%",
   cy: "50%",
   outer_Radius: "80%",
@@ -98,4 +105,17 @@ const rbchartProps = {
   },
 };
 
+const pieProps = {
+  chrt_width: 1000,
+  chrt_height: 400,
+  isAnimationActive: false,
+  cx1: 200,
+  cy1: 200,
+  cx2: 500,
+  cy2: 200,
+  in_radius: 40,
+  out_radius: 80,
+  fill1: "#8884d8",
+  fill2: "#82ca9d",
+};
 export default App;

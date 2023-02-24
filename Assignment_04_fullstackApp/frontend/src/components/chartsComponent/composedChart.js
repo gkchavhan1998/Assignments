@@ -16,48 +16,7 @@ function ComposedChrt(props) {
   const dataFetchedRef = useRef(false);
   const [composedChartData, setComposedChartData] = useState([]);
   const [xAxisDataKey, setXAxisDataKey] = useState("");
-  //   const [barDataKey, setBarDataKey] = useState("");
-  //   const [lineDataKey, setLineDataKey] = useState("");
   const [composedChartDataKey, setcomposedChartDataKey] = useState([]);
-
-  const data = [
-    {
-      name: "Page A",
-      uv: 590,
-      pv: 800,
-      amt: 1400,
-    },
-    {
-      name: "Page B",
-      uv: 868,
-      pv: 967,
-      amt: 1506,
-    },
-    {
-      name: "Page C",
-      uv: 1397,
-      pv: 1098,
-      amt: 989,
-    },
-    {
-      name: "Page D",
-      uv: 1480,
-      pv: 1200,
-      amt: 1228,
-    },
-    {
-      name: "Page E",
-      uv: 1520,
-      pv: 1108,
-      amt: 1100,
-    },
-    {
-      name: "Page F",
-      uv: 1400,
-      pv: 680,
-      amt: 1700,
-    },
-  ];
 
   useEffect(() => {
     if (dataFetchedRef.current) return;
@@ -95,7 +54,11 @@ function ComposedChrt(props) {
         return (
           <div key={item}>
             {/* for every iteration of this map we are returning this div... so we are amking a list. So, Each child in a list should have a unique "key" prop */}
-            <ResponsiveContainer width="100%" height="100%" aspect={3}>
+            <ResponsiveContainer
+              width={props.details.rc_width}
+              height={props.details.rc_height}
+              aspect={props.details.rc_aspect}
+            >
               <ComposedChart
                 width={props.details.rc_width}
                 height={props.details.rc_aspect}

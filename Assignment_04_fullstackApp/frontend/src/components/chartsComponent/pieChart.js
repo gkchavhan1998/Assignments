@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { PieChart, Pie, Legend, Tooltip } from "recharts";
 
-function PieChrt() {
+function PieChrt(props) {
   const dataFetchedRef = useRef(false);
   const data01 = [
     { name: "Group A", value: 400 },
@@ -44,27 +44,30 @@ function PieChrt() {
   });
   return (
     <>
-      <PieChart width={1000} height={400}>
+      <PieChart
+        width={props.details.chrt_width}
+        height={props.details.chrt_height}
+      >
         <Pie
           dataKey="value"
-          isAnimationActive={false}
+          isAnimationActive={props.details.isAnimationActive}
           data={data01}
-          cx={200}
-          cy={200}
-          innerRadius={40}
-          outerRadius={80}
-          fill="#8884d8"
+          cx={props.details.cx1}
+          cy={props.details.cy1}
+          innerRadius={props.details.in_radius}
+          outerRadius={props.details.out_radius}
+          fill={props.details.fill1}
           label
         />
         <Pie
           dataKey="value"
-          isAnimationActive={false}
+          isAnimationActive={props.details.isAnimationActive}
           data={data02}
-          cx={500}
-          cy={200}
-          innerRadius={40}
-          outerRadius={80}
-          fill="#82ca9d"
+          cx={props.details.cx2}
+          cy={props.details.cy2}
+          innerRadius={props.details.in_radius}
+          outerRadius={props.details.out_radius}
+          fill={props.details.fill2}
           label
         />
         <Tooltip />
