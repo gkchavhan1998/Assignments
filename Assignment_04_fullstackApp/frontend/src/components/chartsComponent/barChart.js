@@ -1,21 +1,11 @@
 import React, { useState, useEffect, useRef } from "react";
-import {
-  BarChart,
-  Bar,
-  Cell,
-  XAxis,
-  YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
-  ResponsiveContainer,
-} from "recharts";
+import { BarChrt } from "re-charts-project";
 
-function BarChrt(props) {
+function BarChart(props) {
   const dataFetchedRef = useRef(false);
   const [chartData, setChartData] = useState([]);
   const [xAxisDataKey, setXAxisDataKey] = useState("");
-  const [barDataKey, setBarDataKey] = useState([]);
+  const [dataKey, setDataKey] = useState([]);
 
   useEffect(() => {
     if (dataFetchedRef.current) return;
@@ -37,50 +27,66 @@ function BarChrt(props) {
         setChartData(result);
         setXAxisDataKey(Object.keys(result[0])[0]); //this code will give variable name of 1st value of 1st object from entore array-of-object
         for (let i = 1; i < Object.keys(result[0]).length; i++) {
-          barDataKey.push(Object.keys(result[0])[i]);
+          dataKey.push(Object.keys(result[0])[i]);
         }
       });
     // console.log("in useeffect end");
   });
-  //   console.log("CHART DATA : --- ", chartData);
-  //   console.log("x-axis DATA : --- ", xAxisDataKey);
-  //   console.log("Bar key DATA : --- ", barDataKey);
-  return (
-    <div>
-      BarChrt
-      <ResponsiveContainer
-        width={props.details.rc_width}
-        height={props.details.rc_height}
-        aspect={props.details.rc_aspect}
-      >
-        <BarChart
-          width={props.details.rc_width}
-          height={props.details.rc_aspect}
-          data={chartData}
-          margin={{
-            top: props.details.m_top,
-            right: props.details.m_right,
-            left: props.details.m_left,
-            bottom: props.details.m_bottom,
-          }}
-        >
-          <CartesianGrid strokeDasharray={props.details.cg_sdash} />
-          <XAxis dataKey={xAxisDataKey} interval={props.details.x_interval} />
-          <YAxis />
-          <Tooltip />
-          <Legend />
-          {/* <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" /> */}
 
-          {barDataKey.map((item) => {
-            return (
-              <Bar dataKey={item} fill={props.details.chart_fill} key={item} />
-            );
-          })}
-        </BarChart>
-      </ResponsiveContainer>
-    </div>
+  const barChartProps = {
+    chart_data: chartData,
+    x_axis_datakey: xAxisDataKey,
+    bar_datakey: dataKey,
+    rc_width: "100%",
+    rc_height: "100%",
+    rc_aspect: 3,
+    chart_width: 500,
+    chart_height: 300,
+    m_top: 5,
+    m_bottom: 5,
+    m_left: 20,
+    m_right: 100,
+    cg_sdash: "3 3",
+    x_interval: "preserveStartEnd",
+    chart_fill: "blue",
+  };
+  return (
+    <> {<BarChrt details={barChartProps} />}</>
+
+    // <div>
+    //   <ResponsiveContainer
+    //     width={props.details.rc_width}
+    //     height={props.details.rc_height}
+    //     aspect={props.details.rc_aspect}
+    //   >
+    //     <BarChart
+    //       width={props.details.chart_width}
+    //       height={props.details.chart_height}
+    //       data={chartData}
+    //       margin={{
+    //         top: props.details.m_top,
+    //         right: props.details.m_right,
+    //         left: props.details.m_left,
+    //         bottom: props.details.m_bottom,
+    //       }}
+    //     >
+    //       <CartesianGrid strokeDasharray={props.details.cg_sdash} />
+    //       <XAxis dataKey={xAxisDataKey} interval={props.details.x_interval} />
+    //       <YAxis />
+    //       <Tooltip />
+    //       <Legend />
+    //       {/* <Bar dataKey="pv" fill="#8884d8" />
+    //       <Bar dataKey="uv" fill="#82ca9d" /> */}
+
+    //       {dataKey.map((item) => {
+    //         return (
+    //           <Bar dataKey={item} fill={props.details.chart_fill} key={item} />
+    //         );
+    //       })}
+    //     </BarChart>
+    //   </ResponsiveContainer>
+    // </div>
   );
 }
 
-export default BarChrt;
+export default BarChart;
