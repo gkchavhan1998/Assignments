@@ -36,40 +36,7 @@ function PieChart(props) {
     fill1: "#8884d8",
     fill2: "#82ca9d",
   };
-  return (
-    <>{<PieChrt details={pieChartProps} />}</>
-
-    // <>
-    //   <PieChart
-    //     width={props.details.chrt_width}
-    //     height={props.details.chrt_height}
-    //   >
-    //     <Pie
-    //       dataKey="value"
-    //       isAnimationActive={props.details.isAnimationActive}
-    //       data={data01}
-    //       cx={props.details.cx1}
-    //       cy={props.details.cy1}
-    //       innerRadius={props.details.in_radius}
-    //       outerRadius={props.details.out_radius}
-    //       fill={props.details.fill1}
-    //       label
-    //     />
-    //     <Pie
-    //       dataKey="value"
-    //       isAnimationActive={props.details.isAnimationActive}
-    //       data={data02}
-    //       cx={props.details.cx2}
-    //       cy={props.details.cy2}
-    //       innerRadius={props.details.in_radius}
-    //       outerRadius={props.details.out_radius}
-    //       fill={props.details.fill2}
-    //       label
-    //     />
-    //     <Tooltip />
-    //   </PieChart>
-    // </>
-  );
+  return <>{<PieChrt details={pieChartProps} />}</>;
 }
 
 export default PieChart;

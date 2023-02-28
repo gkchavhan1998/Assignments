@@ -50,46 +50,7 @@ function RadarChrt(props) {
     fillOpacity: 0.6,
   };
 
-  return (
-    <>{<RadialChrt details={radiaChrtProps} />}</>
-    // <>
-    //   <ResponsiveContainer
-    //     width={props.details.rc_width}
-    //     height={props.details.rc_height}
-    //     aspect={props.details.rc_aspect}
-    //   >
-    //     <RadarChart
-    //       cx={props.details.cx}
-    //       cy={props.details.cy}
-    //       outerRadius={props.details.outer_Radius}
-    //       data={chartData}
-    //     >
-    //       <PolarGrid />
-    //       <PolarAngleAxis dataKey={polarAngleAxisDataKey} />
-    //       <PolarRadiusAxis
-    //         angle={props.details.polr_r_axis_angle}
-    //         domain={props.details.polr_r_axis_domain}
-    //       />
-    //       {/* domain={[0, 120]}  it is to give scale to radar graph*/}
-    //       <Tooltip />
-    //       {radarDataKey.map((item) => {
-    //         return (
-    //           <Radar
-    //             //   name={item}
-    //             dataKey={item}
-    //             stroke={props.details.stroke}
-    //             fill={props.details.fill}
-    //             // activeDot={{ r: props.details.dot_rad }}
-    //             key={item}
-    //             fillOpacity={props.details.fillOpacity}
-    //           />
-    //         );
-    //       })}
-    //       <Legend />
-    //     </RadarChart>
-    //   </ResponsiveContainer>
-    // </>
-  );
+  return <>{<RadialChrt details={radiaChrtProps} />}</>;
 }
 
 export default RadarChrt;

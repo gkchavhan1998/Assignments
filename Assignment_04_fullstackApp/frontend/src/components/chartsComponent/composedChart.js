@@ -52,54 +52,7 @@ function ComposedChart(props) {
     compChart_Scale: "auto",
     bar_size: 20,
   };
-  return (
-    <>{<ComposedChrt details={composedChartProps} />}</>
-    // <>
-    //   {dataKey.map((item) => {
-    //     return (
-    //       <div key={item}>
-    //         {/* for every iteration of this map we are returning this div... so we are amking a list. So, Each child in a list should have a unique "key" prop */}
-    //         <ResponsiveContainer
-    //           width={props.details.rc_width}
-    //           height={props.details.rc_height}
-    //           aspect={props.details.rc_aspect}
-    //         >
-    //           <ComposedChart
-    //             width={props.details.rc_width}
-    //             height={props.details.rc_aspect}
-    //             data={chartData}
-    //             margin={{
-    //               top: props.details.m_top,
-    //               right: props.details.m_right,
-    //               left: props.details.m_left,
-    //               bottom: props.details.m_bottom,
-    //             }}
-    //           >
-    //             <CartesianGrid strokeDasharray={props.details.cg_sdash} />
-    //             <XAxis
-    //               dataKey={xAxisDataKey}
-    //               scale={props.details.compChart_Scale}
-    //             />
-    //             <YAxis />
-    //             <Tooltip />
-    //             <Legend />
-    //             <Bar
-    //               dataKey={item}
-    //               fill={props.details.chart_fill}
-    //               barSize={props.details.bar_size}
-    //             />
-    //             <Line
-    //               type={props.details.chart_type}
-    //               dataKey={item}
-    //               stroke={props.details.chart_stroke}
-    //             />
-    //           </ComposedChart>
-    //         </ResponsiveContainer>
-    //       </div>
-    //     );
-    //   })}
-    // </>
-  );
+  return <>{<ComposedChrt details={composedChartProps} />}</>;
 }
 
 export default ComposedChart;

@@ -50,43 +50,7 @@ function BarChart(props) {
     x_interval: "preserveStartEnd",
     chart_fill: "blue",
   };
-  return (
-    <> {<BarChrt details={barChartProps} />}</>
-
-    // <div>
-    //   <ResponsiveContainer
-    //     width={props.details.rc_width}
-    //     height={props.details.rc_height}
-    //     aspect={props.details.rc_aspect}
-    //   >
-    //     <BarChart
-    //       width={props.details.chart_width}
-    //       height={props.details.chart_height}
-    //       data={chartData}
-    //       margin={{
-    //         top: props.details.m_top,
-    //         right: props.details.m_right,
-    //         left: props.details.m_left,
-    //         bottom: props.details.m_bottom,
-    //       }}
-    //     >
-    //       <CartesianGrid strokeDasharray={props.details.cg_sdash} />
-    //       <XAxis dataKey={xAxisDataKey} interval={props.details.x_interval} />
-    //       <YAxis />
-    //       <Tooltip />
-    //       <Legend />
-    //       {/* <Bar dataKey="pv" fill="#8884d8" />
-    //       <Bar dataKey="uv" fill="#82ca9d" /> */}
-
-    //       {dataKey.map((item) => {
-    //         return (
-    //           <Bar dataKey={item} fill={props.details.chart_fill} key={item} />
-    //         );
-    //       })}
-    //     </BarChart>
-    //   </ResponsiveContainer>
-    // </div>
-  );
+  return <> {<BarChrt details={barChartProps} />}</>;
 }
 
 export default BarChart;

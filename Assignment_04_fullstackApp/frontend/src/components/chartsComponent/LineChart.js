@@ -56,45 +56,7 @@ function LineChart(props) {
     compChart_Scale: "auto",
     bar_size: 20,
   };
-  return (
-    <> {<LineChrt details={lineChartProps} />}</>
-    // <>
-    //   <ResponsiveContainer
-    //     width={props.details.rc_width}
-    //     aspect={props.details.rc_aspect}
-    //   >
-    //     <LineChart
-    //       data={chartData}
-    //       width={props.details.chart_width}
-    //       height={props.details.chart_height}
-    //       margin={{
-    //         top: props.details.m_top,
-    //         right: props.details.m_right,
-    //         left: props.details.m_left,
-    //         bottom: props.details.m_bottom,
-    //       }}
-    //     >
-    //       <CartesianGrid strokeDasharray={props.details.cg_sdash} />
-    //       <XAxis dataKey={xAxisDataKey} interval={props.details.x_interval} />
-    //       <YAxis />
-    //       <Tooltip />
-    //       <Legend />
-
-    //       {dataKey.map((item) => {
-    //         return (
-    //           <Line
-    //             type={props.details.chart_type}
-    //             dataKey={item}
-    //             stroke={props.details.chart_stroke}
-    //             activeDot={{ r: props.details.dot_rad }}
-    //             key={item}
-    //           />
-    //         );
-    //       })}
-    //     </LineChart>
-    //   </ResponsiveContainer>
-    // </>
-  );
+  return <> {<LineChrt details={lineChartProps} />}</>;
 }
 
 export default LineChart;

@@ -54,48 +54,7 @@ function AreaChart(props) {
     dot_rad: 5,
   };
 
-  return (
-    <>{<AreaChrt details={areaChartProps} />}</>
-
-    // <>
-    //   <ResponsiveContainer
-    //     width={props.details.rc_width}
-    //     height={props.details.rc_height}
-    //     aspect={props.details.rc_aspect}
-    //   >
-    //     <AreaChart
-    //       width={props.details.rc_width}
-    //       height={props.details.rc_aspect}
-    //       data={chartData}
-    //       margin={{
-    //         top: props.details.m_top,
-    //         right: props.details.m_right,
-    //         left: props.details.m_left,
-    //         bottom: props.details.m_bottom,
-    //       }}
-    //     >
-    //       <CartesianGrid strokeDasharray={props.details.cg_sdash} />
-    //       <XAxis dataKey={xAxisDataKey} interval={props.details.x_interval} />
-    //       <YAxis />
-    //       <Tooltip />
-    //       <Legend />
-
-    //       {areaDataKey.map((item) => {
-    //         return (
-    //           <Area
-    //             type={props.details.chart_type}
-    //             dataKey={item}
-    //             stroke={props.details.chart_stroke}
-    //             fill={props.details.chart_fill}
-    //             activeDot={{ r: props.details.dot_rad }}
-    //             key={item}
-    //           />
-    //         );
-    //       })}
-    //     </AreaChart>
-    //   </ResponsiveContainer>
-    // </>
-  );
+  return <>{<AreaChrt details={areaChartProps} />}</>;
 }
 
 export default AreaChart;

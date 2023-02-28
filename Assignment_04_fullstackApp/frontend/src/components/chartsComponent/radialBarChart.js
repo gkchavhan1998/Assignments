@@ -52,51 +52,7 @@ function RadialBarChart(props) {
       lineHeight: "24px",
     },
   };
-  return (
-    <> {<RadialBarChrt details={radialBarChrtProps} />}</>
-    // <>
-    //   {radBarChartDataKey.map((item) => {
-    //     return (
-    //       <div key={item}>
-    //         {/* for every iteration of this map we are returning this div... so we are amking a list. So, Each child in a list should have a unique "key" prop */}
-
-    //         <ResponsiveContainer
-    //           width={props.details.rc_width}
-    //           height={props.details.rc_height}
-    //           aspect={props.details.rc_aspect}
-    //         >
-    //           <RadialBarChart
-    //             cx={props.details.cx}
-    //             cy={props.details.cy}
-    //             innerRadius={props.details.inner_Radius}
-    //             outerRadius={props.details.outer_Radius}
-    //             barSize={props.details.bar_size}
-    //             data={radBarChartData}
-    //           >
-    //             <Tooltip />
-    //             <RadialBar
-    //               minAngle={props.details.radBar_minAngl}
-    //               label={{
-    //                 position: props.details.radBar_labelPos,
-    //                 fill: props.details.radBar_fill,
-    //               }}
-    //               background
-    //               clockWise
-    //               dataKey={item}
-    //             />
-    //             <Legend
-    //               iconSize={props.details.legend_iconSize}
-    //               layout={props.details.legend_layout}
-    //               verticalAlign={props.details.legend_verAlign}
-    //               wrapperStyle={props.details.legend_wrapperStyle}
-    //             />
-    //           </RadialBarChart>
-    //         </ResponsiveContainer>
-    //       </div>
-    //     );
-    //   })}
-    // </>
-  );
+  return <> {<RadialBarChrt details={radialBarChrtProps} />}</>;
 }
 
 export default RadialBarChart;
