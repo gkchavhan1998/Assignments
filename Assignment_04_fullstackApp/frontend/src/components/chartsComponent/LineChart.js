@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { LineChrt } from "re-charts-project";
+// import { LineChrt } from "re-charts-project";
+import { LineChrt } from "re-charts-rebuilds";
+
 function LineChart(props) {
   const dataFetchedRef = useRef(false);
   const [chartData, setChartData] = useState([]);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { AreaChrt } from "re-charts-project";
+// import { AreaChrt } from "re-charts-project";
+import { AreaChrt } from "re-charts-rebuilds";
 
 function AreaChart(props) {
   const dataFetchedRef = useRef(false);

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { BarChrt } from "re-charts-project";
+// import { BarChrt } from "re-charts-project";
+import { BarChrt } from "re-charts-rebuilds";
 
 function BarChart(props) {
   const dataFetchedRef = useRef(false);

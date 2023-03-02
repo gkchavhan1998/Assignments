@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { RadialChrt } from "re-charts-project";
+// import { RadialChrt } from "re-charts-project";
+import { RadialChrt } from "re-charts-rebuilds";
 
 function RadarChrt(props) {
   const dataFetchedRef = useRef(false);

@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
-import { RadialBarChrt } from "re-charts-project";
+// import { RadialBarChrt } from "re-charts-project";
+import { RadialBarChrt } from "re-charts-rebuilds";
+
 function RadialBarChart(props) {
   const dataFetchedRef = useRef(false);
   const [radBarChartData, setRadBarChartData] = useState([]);

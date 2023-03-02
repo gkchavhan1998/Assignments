@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { ComposedChrt } from "re-charts-project";
+// import { ComposedChrt } from "re-charts-project";
+import { ComposedChrt } from "re-charts-rebuilds";
 
 function ComposedChart(props) {
   const dataFetchedRef = useRef(false);
