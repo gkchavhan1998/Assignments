@@ -1,6 +1,5 @@
 import React from "react";
-// import { PieChrt } from "re-charts-project";
-import { PieChrt } from "re-charts-rebuilds";
+import { PieChrt } from "re-charts-proj";
 
 function PieChart(props) {
   const data01 = [

@@ -11,7 +11,7 @@ import LineChrt from "./components/chartsComponent/LineChart";
 import AreaChrt from "./components/chartsComponent/areaChart";
 import BarChrt from "./components/chartsComponent/barChart";
 import PieChrt from "./components/chartsComponent/pieChart";
-import RadarChrt from "./components/chartsComponent/radarChart";
+import RadarChart from "./components/chartsComponent/radarChart";
 import ComposedChrt from "./components/chartsComponent/composedChart";
 import RadialBarChrt from "./components/chartsComponent/radialBarChart";
 function App() {
@@ -31,7 +31,7 @@ function App() {
             <Route path="areaC" element={<AreaChrt />} />
             <Route path="barC" element={<BarChrt />} />
             <Route path="pieC" element={<PieChrt />} />
-            <Route path="radarC" element={<RadarChrt />} />
+            <Route path="radarC" element={<RadarChart />} />
             <Route path="composedC" element={<ComposedChrt />} />
             <Route path="radialBarC" element={<RadialBarChrt />} />
           </Route>
