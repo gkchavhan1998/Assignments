@@ -9,7 +9,7 @@ function RadialBarChart(props) {
     cy: "50%",
     outer_Radius: "80%",
     inner_Radius: "10%",
-    bar_size: 10,
+    bar_size: 15,
     radBar_minAngl: 15,
     radBar_labelPos: "insideStart",
     radBar_fill: "#fff",
@@ -22,8 +22,9 @@ function RadialBarChart(props) {
       transform: "translate(0, -50%)",
       lineHeight: "24px",
     },
+    hexColors: ["#f5691d", "#7027cf", "#d11fd1", "#1fd13a"],
   };
-  return <> {<RadialBarChrt details={radialBarChrtProps} />}</>;
+  return <>{<RadialBarChrt details={radialBarChrtProps} />}</>;
 }
 
 export default RadialBarChart;

@@ -19,6 +19,7 @@ function LineChart(props) {
     dot_rad: 5,
     compChart_Scale: "auto",
     bar_size: 20,
+    hexColors: ["#f5691d", "#7027cf", "#d11fd1"],
   };
   return <>{<LineChrt details={lineChartProps} />}</>;
 }

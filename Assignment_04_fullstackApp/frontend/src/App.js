@@ -26,9 +26,9 @@ function App() {
             <Route path="reward" element={<Rewards />} />
             <Route path="setting" element={<Settings />} />
           </Route>
-          <Route path="/dashboard" element={<Dashboard />}>
+          <Route exact path="/dashboard" element={<Dashboard />}>
             <Route path="lineC" element={<LineChrt />} />
-            <Route path="areaC" element={<AreaChrt />} />
+            <Route path="area" element={<AreaChrt />} />
             <Route path="barC" element={<BarChrt />} />
             <Route path="pieC" element={<PieChrt />} />
             <Route path="radarC" element={<RadarChart />} />

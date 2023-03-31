@@ -17,6 +17,7 @@ function ComposedChart(props) {
     chart_fill: "blue",
     compChart_Scale: "auto",
     bar_size: 20,
+    hexColors: ["#f5691d", "#7027cf", "#d11fd1"],
   };
   return <>{<ComposedChrt details={composedChartProps} />}</>;
 }

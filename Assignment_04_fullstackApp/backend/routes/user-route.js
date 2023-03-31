@@ -40,7 +40,7 @@ router.post("/adduser", (request, response) => {
     if (err) {
       response.send(err);
     } else {
-      response.send(user);
+      response.send({ data: "added successfully" });
     }
   });
 });

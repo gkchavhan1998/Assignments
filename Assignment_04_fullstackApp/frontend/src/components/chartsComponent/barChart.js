@@ -14,6 +14,8 @@ function BarChart(props) {
     cg_sdash: "3 3",
     x_interval: "preserveStartEnd",
     chart_fill: "blue",
+    bar_size: 40,
+    hexColors: ["#f5691d", "#7027cf", "#d11fd1"],
   };
   return <> {<BarChrt details={barChartProps} />}</>;
 }

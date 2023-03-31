@@ -17,9 +17,15 @@ function AreaChart(props) {
     chart_stroke: "blue",
     chart_fill: "blue",
     dot_rad: 5,
+    hexColors: ["#f5691d", "#7027cf", "#d11fd1"],
   };
 
-  return <>{<AreaChrt details={areaChartProps} />}</>;
+  return (
+    <>
+      <h1>Area Chart</h1>
+      {<AreaChrt details={areaChartProps} />}
+    </>
+  );
 }
 
 export default AreaChart;

@@ -13,6 +13,7 @@ function RadarChart(props) {
     stroke: "#82ca9d",
     fill: "#82ca9d",
     fillOpacity: 0.6,
+    hexColors: ["#f5691d", "#7027cf", "#d11fd1"],
   };
 
   return <>{<RadarChrt details={radiaChrtProps} />}</>;

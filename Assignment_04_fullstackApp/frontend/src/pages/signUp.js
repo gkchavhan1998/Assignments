@@ -34,11 +34,19 @@ function SignUp() {
     fetch("http://localhost:4000/adduser", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log(result);
+        console.log("RESULT", result);
+        console.log("in fetch");
+        if (!result.data) {
+          throw new Error(result.sqlMessage);
+        }
+
+        let status = document.getElementById("success-status");
+        status.innerHTML = result.data;
         navigate("/login");
       })
       .catch((err) => {
-        console.log("ERROR : ", err);
+        let status = document.getElementById("success-status");
+        status.innerHTML = err;
       });
   };
 
@@ -52,6 +60,7 @@ function SignUp() {
             <div className="mb-3">
               <label>First Name</label>
               <input
+                placeholder="Enter First Name"
                 onKeyUp={(event) => {
                   setFirstName(event.target.value);
                 }}
@@ -62,6 +71,7 @@ function SignUp() {
             <div className="mb-3">
               <label>Last Name</label>
               <input
+                placeholder="Enter Last Name"
                 onKeyUp={(event) => {
                   setLastName(event.target.value);
                 }}
@@ -72,6 +82,7 @@ function SignUp() {
             <div className="mb-3">
               <label>User Type</label>
               <input
+                placeholder="Enter User Type"
                 onKeyUp={(event) => {
                   setUserType(event.target.value);
                 }}
@@ -82,6 +93,7 @@ function SignUp() {
             <div className="mb-3">
               <label>Contact</label>
               <input
+                placeholder="Enter Contact"
                 onKeyUp={(event) => {
                   setContact(event.target.value);
                 }}
@@ -92,6 +104,7 @@ function SignUp() {
             <div className="mb-3">
               <label>Email</label>
               <input
+                placeholder="Enter Email"
                 onKeyUp={(event) => {
                   setEmail(event.target.value);
                 }}
@@ -106,9 +119,12 @@ function SignUp() {
                 style={{ marginRight: 10 }}
                 className="btn btn-success"
               >
-                Login
+                Sign Up
               </button>
             </div>
+          </div>
+          <div>
+            <h2 id="success-status"></h2>
           </div>
         </div>
         <div className="col"></div>
