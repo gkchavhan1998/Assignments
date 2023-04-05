@@ -1,7 +1,4 @@
-import { createMemoryHistory } from "history";
-import { Router } from "react-router-dom";
-import { fireEvent, render, screen } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { render, screen } from "@testing-library/react";
 import App from "./App";
 
 jest.mock("./pages/signUp", () => () => {
@@ -10,9 +7,9 @@ jest.mock("./pages/signUp", () => () => {
 jest.mock("./pages/logIn", () => () => {
   return <div data-testid="login-component">Login</div>;
 });
-jest.mock("./pages/home", () => () => {
-  return <div data-testid="home-component">Home</div>;
-});
+// jest.mock("./pages/home", () => () => {
+//   return <div data-testid="home-component">Home</div>;
+// });
 jest.mock("./pages/homehome", () => () => {
   return <div data-testid="homehome-component">HomeHome</div>;
 });
@@ -54,55 +51,62 @@ describe("Testing Routing", () => {
   test("check signup routing", () => {
     window.history.pushState({}, "", "/");
     render(<App />);
-    // screen.debug();
     expect(screen.getByTestId("signup-component")).toBeInTheDocument();
   });
   test("check login routing", () => {
     window.history.pushState({}, "", "/login");
     render(<App />);
-    // screen.debug();
     expect(screen.getByTestId("login-component")).toBeInTheDocument();
   });
   test("check home routing", () => {
-    window.history.pushState({}, "", "/home/");
+    window.history.pushState({}, "", "/home");
     render(<App />);
-    // screen.debug();
-    expect(screen.getByTestId("home-component")).toBeInTheDocument();
+    // const btn = screen.getAllByRole("button");
+    // console.log("BTN", btn.length);
   });
-  // test("check home > rewards routing", () => {
-  //   window.history.pushState({}, "", "/home/");
-  //   window.history.pushState({}, "", "reward");
-  //   console.log("curr LOC", window.location.href);
-  //   console.log("REWARD LOC", window.history.length);
-  //   window.history.go(-5);
-  //   console.log("prev LOC", window.location.href);
-
-  //   render(<App />);
-  //   screen.debug();
-  //   // expect(screen.getByTestId("rewards-component")).toBeInTheDocument();
-  // });
-  // test("check dashboard routing", () => {
-  //   window.history.pushState({}, "", "/dashboard");
-  //   render(<App />);
-  //   // screen.debug();
-  //   expect(screen.getByTestId("dashboard-component")).toBeInTheDocument();
-  // });
-  test.only("check line chart routing", () => {
-    // window.history.pushState({}, "", "/dashboard/area");
-    const history = createMemoryHistory();
-    history.push("/dashboard/area");
-    render(
-      <Router history={history}>
-        <App />
-      </Router>
-    );
-    console.log("Dashboard");
-    screen.debug();
-
-    // const linkelement = screen.getByText("Area Chart");
-    // console.log("LINK ELEMENT", linkelement);
-    // fireEvent.click(linkelement);
-    // console.log("Area Chart");
-    // screen.debug();
+  test("check home > rewards routing", () => {
+    window.history.pushState({}, "", "/home/reward");
+    render(<App />);
+    expect(screen.getByTestId("rewards-component")).toBeInTheDocument();
+  });
+  test("check dashboard routing", () => {
+    window.history.pushState({}, "", "/dashboard");
+    render(<App />);
+    expect(screen.getAllByRole("link").length).toBe(7);
+  });
+  test("check line chart routing", () => {
+    window.history.pushState({}, "", "/dashboard/lineC");
+    render(<App />);
+    expect(screen.getByTestId("linechart-component")).toBeInTheDocument();
+  });
+  test("check area chart routing", () => {
+    window.history.pushState({}, "", "/dashboard/areaC");
+    render(<App />);
+    expect(screen.getByTestId("areachart-component")).toBeInTheDocument();
+  });
+  test("check bar chart routing", () => {
+    window.history.pushState({}, "", "/dashboard/barC");
+    render(<App />);
+    expect(screen.getByTestId("barchart-component")).toBeInTheDocument();
+  });
+  test("check pie chart routing", () => {
+    window.history.pushState({}, "", "/dashboard/pieC");
+    render(<App />);
+    expect(screen.getByTestId("piechart-component")).toBeInTheDocument();
+  });
+  test("check radar chart routing", () => {
+    window.history.pushState({}, "", "/dashboard/radarC");
+    render(<App />);
+    expect(screen.getByTestId("radarchart-component")).toBeInTheDocument();
+  });
+  test("check composed chart routing", () => {
+    window.history.pushState({}, "", "/dashboard/composedC");
+    render(<App />);
+    expect(screen.getByTestId("composedchart-component")).toBeInTheDocument();
+  });
+  test("check radial bar chart routing", () => {
+    window.history.pushState({}, "", "/dashboard/radialBarC");
+    render(<App />);
+    expect(screen.getByTestId("radialbarchart-component")).toBeInTheDocument();
   });
 });

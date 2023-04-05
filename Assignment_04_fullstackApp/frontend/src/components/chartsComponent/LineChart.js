@@ -2,6 +2,7 @@ import { LineChrt } from "re-charts-proj";
 
 function LineChart(props) {
   const lineChartProps = {
+    title: "Line Chart",
     rc_width: "100%",
     rc_height: "100%",
     rc_aspect: 3,

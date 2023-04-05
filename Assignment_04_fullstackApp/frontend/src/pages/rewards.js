@@ -6,7 +6,7 @@ function Rewards() {
   const [menuItems, setMenuItems] = useState([]);
 
   function fetchMenuItems() {
-    console.log("inside fetch option");
+    console.log("in fetchmenuItem");
     const requestOptions = {
       method: "GET",
       headers: {
@@ -16,14 +16,13 @@ function Rewards() {
     fetch("http://localhost:4000/getrewardoption", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log("menu items : ", result);
         setMenuItems(result);
       });
   }
   useEffect(() => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true; // this is done because useEffect was executing twice.
-    console.log("reward");
+    console.log("reward useeffect");
     fetchMenuItems();
   });
   return (

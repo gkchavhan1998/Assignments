@@ -2,6 +2,7 @@ import { ComposedChrt } from "re-charts-proj";
 
 function ComposedChart(props) {
   const composedChartProps = {
+    title: "Composed Chart",
     rc_width: "100%",
     rc_height: "100%",
     rc_aspect: 3,

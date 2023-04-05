@@ -5,6 +5,8 @@
 import "@testing-library/jest-dom";
 // src/setupTests.js
 import { server } from "./mocks/server.js";
+//this global.ResizeObserver is set to counter error : window.ResizeObserver is not a constructor. Before it I installed resize-observer-polyfill
+global.ResizeObserver = require("resize-observer-polyfill");
 // Establish API mocking before all tests.
 beforeAll(() => server.listen());
 

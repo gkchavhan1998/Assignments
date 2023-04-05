@@ -2,6 +2,7 @@ import { RadarChrt } from "re-charts-proj";
 
 function RadarChart(props) {
   const radiaChrtProps = {
+    title: "Radar Chart",
     rc_width: "100%",
     rc_height: "100%",
     rc_aspect: 3,

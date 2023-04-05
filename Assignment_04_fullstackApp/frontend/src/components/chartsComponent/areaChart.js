@@ -2,6 +2,7 @@ import { AreaChrt } from "re-charts-proj";
 
 function AreaChart(props) {
   const areaChartProps = {
+    title: "Area Chart",
     rc_width: "100%",
     rc_height: "100%",
     rc_aspect: 3,
@@ -20,12 +21,7 @@ function AreaChart(props) {
     hexColors: ["#f5691d", "#7027cf", "#d11fd1"],
   };
 
-  return (
-    <>
-      <h1>Area Chart</h1>
-      {<AreaChrt details={areaChartProps} />}
-    </>
-  );
+  return <>{<AreaChrt details={areaChartProps} />}</>;
 }
 
 export default AreaChart;

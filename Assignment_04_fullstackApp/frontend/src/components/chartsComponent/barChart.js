@@ -2,6 +2,7 @@ import { BarChrt } from "re-charts-proj";
 
 function BarChart(props) {
   const barChartProps = {
+    title: "Bar Chart",
     rc_width: "100%",
     rc_height: "100%",
     rc_aspect: 3,

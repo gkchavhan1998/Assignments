@@ -11,12 +11,6 @@ function SignUp() {
   const navigate = useNavigate();
 
   const signUp = () => {
-    console.log(`email : ${email}`);
-    console.log(`first name : ${first_name}`);
-    console.log(`last name : ${last_name}`);
-    console.log(`user type : ${user_type}`);
-    console.log(`contact : ${contact}`);
-
     const requestOptions = {
       method: "POST",
       headers: {
@@ -34,8 +28,6 @@ function SignUp() {
     fetch("http://localhost:4000/adduser", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log("RESULT", result);
-        console.log("in fetch");
         if (!result.data) {
           throw new Error(result.sqlMessage);
         }

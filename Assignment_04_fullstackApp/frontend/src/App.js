@@ -21,14 +21,14 @@ function App() {
         <Routes>
           <Route path="/" element={<SignUp />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/home/" element={<Home />}>
+          <Route path="/home" element={<Home />}>
             <Route path="" element={<Homehome />} />
             <Route path="reward" element={<Rewards />} />
             <Route path="setting" element={<Settings />} />
           </Route>
-          <Route exact path="/dashboard" element={<Dashboard />}>
+          <Route path="/dashboard" element={<Dashboard />}>
             <Route path="lineC" element={<LineChrt />} />
-            <Route path="area" element={<AreaChrt />} />
+            <Route path="areaC" element={<AreaChrt />} />
             <Route path="barC" element={<BarChrt />} />
             <Route path="pieC" element={<PieChrt />} />
             <Route path="radarC" element={<RadarChart />} />

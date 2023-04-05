@@ -21,6 +21,7 @@ function PieChart(props) {
   ];
 
   const pieChartProps = {
+    title: "Pie Chart",
     datakey: "value",
     data01: data01,
     data02: data02,

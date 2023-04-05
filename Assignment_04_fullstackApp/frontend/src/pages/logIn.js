@@ -20,8 +20,8 @@ function Login() {
     fetch("http://localhost:4000/login", requestOptions)
       .then((response) => response.json())
       .then((result) => {
-        console.log("RESULT---", result);
         // window.userType = result[0].user_type;
+
         if (result.length === 0) {
           throw new Error("Incorrect Email Id");
         }
@@ -47,7 +47,7 @@ function Login() {
           <div className="form">
             <div className="mb-3">
               <label>Email</label>
-              {console.log("working")}
+              {/* {console.log("working")} */}
               <input
                 onKeyUp={(event) => {
                   setEmail(event.target.value);

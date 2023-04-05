@@ -2,6 +2,7 @@ import { RadialBarChrt } from "re-charts-proj";
 
 function RadialBarChart(props) {
   const radialBarChrtProps = {
+    title: "Radial Bar Chart",
     rc_width: "100%",
     rc_height: "100%",
     rc_aspect: 3,
