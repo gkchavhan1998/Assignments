@@ -23,6 +23,7 @@ function Login() {
         // window.userType = result[0].user_type;
 
         if (result.length === 0) {
+          console.log("RESULT", result);
           throw new Error("Incorrect Email Id");
         }
         localStorage.setItem("email", result[0].email);

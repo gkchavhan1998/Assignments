@@ -5,7 +5,7 @@ import Home from "./pages/home";
 import Homehome from "./pages/homehome";
 import Rewards from "./pages/rewards";
 import Settings from "./pages/settings";
-import Test from "./pages/test";
+import PageNotFound from "./pages/pageNotFound";
 import Dashboard from "./pages/dashboard";
 import LineChrt from "./components/chartsComponent/LineChart";
 import AreaChrt from "./components/chartsComponent/areaChart";
@@ -35,7 +35,7 @@ function App() {
             <Route path="composedC" element={<ComposedChrt />} />
             <Route path="radialBarC" element={<RadialBarChrt />} />
           </Route>
-          <Route path="/test" element={<Test />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
     </>

@@ -3,6 +3,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import SignUp from "../signUp";
 import { BrowserRouter } from "react-router-dom";
 import * as router from "react-router";
+import { server } from "../../mocks/server";
+import { rest } from "msw";
 
 const MockSignup = () => {
   return (
@@ -52,5 +54,18 @@ describe("Checking input value", () => {
     const statusText = await screen.findByText("user added successfully");
     expect(statusText).toBeInTheDocument();
     expect(navigate).toHaveBeenCalledWith("/login");
+  });
+
+  test("Error Checking in Signup", async () => {
+    server.use(
+      rest.post("http://localhost:4000/adduser", (req, res, ctx) => {
+        return res(ctx.status(200), ctx.json({}));
+      })
+    );
+    render(<MockSignup />);
+    const signupBtn = screen.getByText("Sign Up");
+    fireEvent.click(signupBtn);
+    const statusText = await screen.findByText("Error: Invalid data");
+    expect(statusText).toBeInTheDocument();
   });
 });

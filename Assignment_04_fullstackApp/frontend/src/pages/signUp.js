@@ -24,12 +24,13 @@ function SignUp() {
         email,
       }),
     };
-
+    console.log("EMAIL : ", email);
     fetch("http://localhost:4000/adduser", requestOptions)
       .then((response) => response.json())
       .then((result) => {
+        console.log("RESULT", result);
         if (!result.data) {
-          throw new Error(result.sqlMessage);
+          throw new Error("Invalid data");
         }
 
         let status = document.getElementById("success-status");

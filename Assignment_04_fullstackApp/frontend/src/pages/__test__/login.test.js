@@ -2,6 +2,8 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import Login from "../logIn";
 import { BrowserRouter } from "react-router-dom";
 import * as router from "react-router";
+import { server } from "../../mocks/server";
+import { rest } from "msw";
 
 const MockLogin = () => {
   return (
@@ -41,5 +43,17 @@ describe("Checking input value", () => {
     expect(navigate).toHaveBeenCalledWith("/home", {
       state: { userType: "Admin" },
     });
+  });
+
+  test("catch block", async () => {
+    server.use(
+      rest.post("http://localhost:4000/login", (req, res, ctx) => {
+        return res(ctx.json([]));
+      })
+    );
+    render(<MockLogin />);
+    const loginBtn = screen.getByRole("button");
+    fireEvent.click(loginBtn);
+    const errText = await screen.findByText("Error: Incorrect Email Id");
   });
 });

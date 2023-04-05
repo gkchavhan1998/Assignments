@@ -19,9 +19,9 @@ jest.mock("./pages/rewards", () => () => {
 jest.mock("./pages/settings", () => () => {
   return <div data-testid="settings-component">Settings</div>;
 });
-jest.mock("./pages/test", () => () => {
-  return <div data-testid="test-component">Test</div>;
-});
+// jest.mock("./pages/pageNotFound", () => () => {
+//   return <div data-testid="pageNotFound-component">Test</div>;
+// });
 // jest.mock("./pages/dashboard", () => () => {
 //   return <div data-testid="dashboard-component">Dashboard</div>;
 // });
@@ -108,5 +108,11 @@ describe("Testing Routing", () => {
     window.history.pushState({}, "", "/dashboard/radialBarC");
     render(<App />);
     expect(screen.getByTestId("radialbarchart-component")).toBeInTheDocument();
+  });
+  test("check page not found", () => {
+    window.history.pushState({}, "", "/fsbjkc");
+    render(<App />);
+    const pageNotFoundText = screen.getByText("Page Not Found");
+    expect(pageNotFoundText).toBeInTheDocument();
   });
 });

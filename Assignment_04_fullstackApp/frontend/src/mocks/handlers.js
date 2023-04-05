@@ -1,5 +1,4 @@
 import { rest } from "msw";
-
 export const handlers = [
   rest.post("http://localhost:4000/adduser", (req, res, ctx) => {
     return res(ctx.status(200), ctx.json({ data: "user added successfully" }));
@@ -22,6 +21,6 @@ export const handlers = [
   }),
 
   rest.get("http://localhost:4000/getrewardoption", (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json([{ name: "Your Reward" }]));
+    return res(ctx.status(200), ctx.json([{ name: "Your Rewards" }]));
   }),
 ];

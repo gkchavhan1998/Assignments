@@ -1,4 +1,4 @@
-import { getByText, render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import AreaChart from "../areaChart";
 import BarChart from "../barChart";
 import ComposedChart from "../composedChart";
