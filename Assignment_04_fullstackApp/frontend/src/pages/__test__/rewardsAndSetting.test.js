@@ -12,6 +12,7 @@ describe("Checking input value", () => {
       })
     );
     render(<Rewards />);
+    screen.debug();
     // const textdata = await screen.findByText("Your Rewards");
   });
   test("setting test", async () => {

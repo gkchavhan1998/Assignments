@@ -8,6 +8,7 @@ const router = express.Router();
 //login user
 router.post("/login", (request, response) => {
   const { email } = request.body;
+  console.log("REQUEST BODY", request.body);
   const statement = `select * from brownie_points where email='${email}';`;
   const connection = db.connect();
   //execute query
@@ -83,10 +84,9 @@ router.get("/getmainoption", (request, response) => {
     }
   });
 });
-
-//get reward options
-router.get("/getrewardoption", (request, response) => {
-  const statement = "select * from reward_options;";
+//form management navbar options
+router.get("/form_management_options", (request, response) => {
+  const statement = "select * from form_options;";
   const connection = db.connect();
   //execute query
   connection.query(statement, (err, user) => {
@@ -95,6 +95,23 @@ router.get("/getrewardoption", (request, response) => {
     if (err) {
       response.send(err);
     } else {
+      response.send(user);
+    }
+  });
+});
+//get reward options
+router.get("/getrewardoption", (request, response) => {
+  const statement = "select * from reward_options;";
+  const connection = db.connect();
+  //execute query
+  console.log("In rewards options");
+  connection.query(statement, (err, user) => {
+    //close connection
+    connection.end();
+    if (err) {
+      response.send(err);
+    } else {
+      console.log("REWARDS O/P", user);
       response.send(user);
     }
   });
@@ -119,11 +136,14 @@ router.get("/getsettingoption", (request, response) => {
 //get projact details for chart plotting
 router.post("/getprojectdata", (request, response) => {
   //get email if from request---->find person id---> based on id find project details of that person
+  console.log("BODY---", request.body);
   const { email } = request.body;
   const getPersonId = `select id from brownie_points where email='${email}';`;
+
   const connection = db.connect();
   //execute query
   connection.query(getPersonId, (err, user) => {
+    console.log("USER: ", user);
     if (err) {
       response.send(err);
     } else {

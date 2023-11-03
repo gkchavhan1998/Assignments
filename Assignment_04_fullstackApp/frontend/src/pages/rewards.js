@@ -5,20 +5,20 @@ function Rewards() {
   const dataFetchedRef = useRef(false);
   const [menuItems, setMenuItems] = useState([]);
 
-  function fetchMenuItems() {
+  const fetchMenuItems = async () => {
     const requestOptions = {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     };
-    fetch("http://localhost:4000/getrewardoption", requestOptions)
+    await fetch("http://localhost:4000/getrewardoption", requestOptions)
       .then((response) => response.json())
       .then((result) => {
         console.log("RESULT", result);
         setMenuItems(result);
       });
-  }
+  };
   useEffect(() => {
     if (dataFetchedRef.current) return;
     dataFetchedRef.current = true; // this is done because useEffect was executing twice.
